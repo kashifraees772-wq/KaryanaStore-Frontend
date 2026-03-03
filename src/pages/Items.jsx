@@ -171,7 +171,7 @@ export default function Items() {
                         <MdSearch />
                         <input placeholder="Search items by name or category..." value={search} onChange={e => setSearch(e.target.value)} />
                     </div>
-                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', width: '100%' }}>
+                    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         {FILTERS.map(f => (
                             <button
                                 key={f.key}

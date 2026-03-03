@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -57,13 +58,13 @@ export default function Login() {
                         <label className="form-label">Password</label>
                         <div style={{ position: 'relative' }}>
                             <input
-                                type={showPassword ? 'text' : 'password'}
+                                type={showPassword ? "text" : "password"}
                                 className="form-input"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                                 placeholder="••••••••"
-                                required
                                 style={{ paddingRight: '40px' }}
+                                required
                             />
                             <button
                                 type="button"
@@ -79,10 +80,11 @@ export default function Login() {
                                     cursor: 'pointer',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    padding: '4px'
+                                    justifyContent: 'center',
+                                    padding: '5px'
                                 }}
                             >
-                                {showPassword ? '👁️' : '👁️‍🗨️'}
+                                {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
                             </button>
                         </div>
                     </div>
