@@ -724,6 +724,20 @@ tbody td {
   .stats-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .sales-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sales-grid-left,
+  .sales-grid-right {
+    width: 100%;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 480px) {

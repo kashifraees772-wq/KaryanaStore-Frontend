@@ -273,9 +273,9 @@ export default function Sales() {
                 </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '420px 1fr', gap: 20, alignItems: 'start' }}>
+            <div className="sales-grid" style={{ display: 'grid', gridTemplateColumns: '420px 1fr', gap: 20, alignItems: 'start' }}>
                 {/* Left: Add Item */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div className="sales-grid-left" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                     <div className="card">
                         <div className="card-title"><MdPointOfSale /> Add Item to Sale</div>
                         <div className="form-group">
@@ -332,7 +332,7 @@ export default function Sales() {
                 </div>
 
                 {/* Right: Cart + History */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+                <div className="sales-grid-right" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                     {/* Cart */}
                     <div className="card" style={{ padding: 0 }}>
                         <div style={{ padding: '18px 24px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
