@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
 
     const { login } = useContext(AuthContext);
@@ -54,14 +55,36 @@ export default function Login() {
 
                     <div className="form-group" style={{ marginBottom: 30 }}>
                         <label className="form-label">Password</label>
-                        <input
-                            type="password"
-                            className="form-input"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            placeholder="••••••••"
-                            required
-                        />
+                        <div style={{ position: 'relative' }}>
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                className="form-input"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                placeholder="••••••••"
+                                required
+                                style={{ paddingRight: '40px' }}
+                            />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                style={{
+                                    position: 'absolute',
+                                    right: '10px',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    background: 'none',
+                                    border: 'none',
+                                    color: 'var(--text-muted)',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    padding: '4px'
+                                }}
+                            >
+                                {showPassword ? '👁️' : '👁️‍🗨️'}
+                            </button>
+                        </div>
                     </div>
 
                     <button
